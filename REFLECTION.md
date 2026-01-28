@@ -1,7 +1,7 @@
 #Behzad Ghabaei
 #CS 81 - JavaScript
 #dailySimulation.html
-#Refelction.md
+#Reflection.md
 #Instructor Seno
 #1/27/2026
 # Reflection – Daily Schedule Simulator
