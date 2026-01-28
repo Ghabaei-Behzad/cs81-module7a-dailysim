@@ -6,7 +6,6 @@ Instructor Seno
 1/27/2026
 -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,8 +70,13 @@ Instructor Seno
       timerDisplay.innerText = "Connecting with the global team. Or: just checking in at Slack";
     }, 6000);
 
-    // 5. The Twist: Random Life Event (8s later)
-    // We use Math.random to simulate the unpredictability of a real day.
+    /**
+    * 5. The Twist: Random Life Event (8s later)
+    * We use Math.random to simulate the unpredictability of a real day. 
+    * the following code allows a random display of our surprises array: 
+    * const randomTwist = surprises[Math.floor(Math.random() * surprises.length)];
+    * now it's easy to see that the twist is done the same way as all the other activities.
+    */
     setTimeout(() => {
       const surprises = [
         "🎁 Surprise: A package arrived with new tech gadgets!",
