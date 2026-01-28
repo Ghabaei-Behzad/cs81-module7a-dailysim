@@ -1,18 +1,101 @@
+<!--
+Behzad Ghabaei
+CS 81 - JavaScript
+Assignment 7b - dailySimulation.html
+Instructor Seno
+1/27/2026
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>My Daily Schedule Simulation</title>
 </head>
-<body style="font-family: sans-serif; text-align: center; padding-top: 60px; background-color: #eef;">
-
-  <h1>My Simulated Day</h1>
-  <div id="output" style="margin-top: 40px; font-size: 1.5rem;"></div>
+  <!--added style font-family and color-->
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding-top: 60px; background-color: #f0f4f8; color: #333;">
+ <h1>My Simulated Day (2026 Edition)</h1>
+  <!--added font-weight, min-height and transition-->
+   <div id="output" style="margin-top: 40px; font-size: 1.8rem; font-weight: bold; min-height: 100px; transition: all 0.5s ease;">
+    Initializing your day...
+  </div>
+  <p id="timer" style="color: #666; font-style: italic;"></p>
 
   <script>
     const output = document.getElementById("output");
+    //added "timer"
+    const timerDisplay = document.getElementById("timer");
+
+ /** 
+ * ADD CODE HERE
+ * Helper function to update the UI
+ * logActivity is a function with two parameters, message and color.
+ * JavaScript uses setTimeout to wait for the "right time" to execute
+ * code without freezing the rest of the program.
+ * The delays (2000ms, 4000ms) act as a scaled-down version of a
+ * 24 hour clock. It's used for Scheduled Tasks or animations.
+ * The random array selection inside a setTimeout is demonstrating that
+ * scheduled code can produce, unpredictable results.
+ * setTimeout demonstrates the flow of asynchronous JavaScript.
+ */
+    function logActivity(message, color) {
+      output.innerText = message;
+      output.style.color = color;
+    }
+
+    // A sequence of asynchronous events representing a typical creative day
+    // The delay simulates real-world time.
     
-    # ADD CODE HERE
+    // 1. Morning Kickoff (0s)
+    setTimeout(() => {
+      logActivity("🌅 7:00 AM: Meditation, Breakfast & Coffee Brew", "#d4a017");
+      timerDisplay.innerText = "The day begins with clarity and hunger...";
+    }, 0);
+
+    // 2. Creative Sprint (2s later)
+    setTimeout(() => {
+      logActivity("💻 9:00 AM: Writing numerous lines of clean code, trying my best! - can I write up to 1000 lines?", "#2a9d8f");
+      timerDisplay.innerText = "Trying to get a - Flow State - activated.";
+    }, 2000);
+
+    // 3. Physical Wellness (4s later)
+    setTimeout(() => {
+      logActivity("🏃 12:30 PM: 1km - 5km Run in the park", "#e76f51");
+      timerDisplay.innerText = "Recharging the physical battery.";
+    }, 4000);
+
+    // 4. Collaborative Learning (6s later)
+    setTimeout(() => {
+      logActivity("🤝 3:00 PM: Virtual Reality Brainstorming Session", "#457b9d");
+      timerDisplay.innerText = "Connecting with the global team. Or: just checking in at Slack";
+    }, 6000);
+
+    // 5. The Twist: Random Life Event (8s later)
+    // We use Math.random to simulate the unpredictability of a real day.
+    setTimeout(() => {
+      const surprises = [
+        "🎁 Surprise: A package arrived with new tech gadgets!",
+        "⛈️ Plot Twist: A sudden thunderstorm starts — Nap time!",
+        "🍕 Random Event: Friends invited you for spontaneous pizza!",
+        "🦄 Rare Event: You solved that bug you've had for three weeks!"
+      ];
+      const randomTwist = surprises[Math.floor(Math.random() * surprises.length)];
+      logActivity(randomTwist, "#9b5de5");
+      timerDisplay.innerText = "Expect the unexpected.";
+    }, 8000);
+
+    // 6. Evening Wind-down (10s later)
+    setTimeout(() => {
+      logActivity("📚 9:00 PM: Reading or watching Sci-Fi by the fireplace", "#264653");
+      timerDisplay.innerText = "Winding down the digital mind.";
+    }, 10000);
+
+    // 7. System Shutdown (12s later)
+    setTimeout(() => {
+      logActivity("😴 11:30 PM: Sleep Mode Activated", "#1d3557");
+      timerDisplay.innerText = "Simulation is complete. See you tomorrow.";
+    }, 12000);
 
   </script>
 
